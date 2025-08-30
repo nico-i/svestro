@@ -18,8 +18,6 @@
   "scripts": {
     "build": "bun build ./index.ts --outdir ./out --target node --minify && bunx tsc",
     "dev": "bun run index.ts",
-    "start": "node out/index.js",
-    "test": "node out/index.js --help",
     "lint": "eslint . --ext .ts --fix && prettier . --write && tsc --noEmit",
     "prepare": "husky || true"
   },
