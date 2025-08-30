@@ -1,0 +1,8 @@
+backend:
+  name: test-repo
+
+collections:
+  - name: empty
+    label: Empty Collection
+    folder: content/empty
+    fields: []

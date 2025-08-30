@@ -1,0 +1,11 @@
+backend:
+  name: test-repo
+
+collections:
+  - name: unicode
+    label: Unicode Collection
+    folder: content/unicode
+    fields:
+      - { name: título, label: Título, widget: string }
+      - { name: 描述, label: 描述, widget: string }
+      - { name: emoji_field_🚀, label: Emoji Field 🚀, widget: string }

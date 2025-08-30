@@ -1,0 +1,48 @@
+backend:
+  name: test-repo
+
+media_folder: static/media
+public_folder: /media
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
+    create: true
+    fields:
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: subtitle, label: Subtitle, widget: string, required: false }
+      - { name: description, label: Description, widget: string }
+      - { name: date, label: Date, widget: datetime }
+      - { name: releaseDate, label: Release Date, widget: datetime }
+      - { name: featured, label: Featured, widget: boolean }
+      - { name: available, label: Available, widget: boolean }
+      - {
+          name: tags,
+          label: Tags,
+          widget: list,
+          fields: [{ name: tag, label: Tag, widget: string }],
+        }
+      - name: category
+        label: Category
+        widget: select
+        options: [electronics, clothing, books]
+      - { name: images, label: Images, widget: image }
+      - { name: color, label: Color, widget: color }
+      - { name: code, label: Code, widget: code }
+      - { name: uuid, label: UUID, widget: uuid }
+      - { name: cover_image, label: Cover Image, widget: image }
+      - { name: attachment, label: Attachment, widget: file }
+      - { name: content, label: Content, widget: markdown }
+      - { name: code_snippet, label: Code, widget: code }
+      - { name: color_theme, label: Color, widget: color }
+      - { name: id, label: ID, widget: uuid }
+      - { name: price, label: Price, widget: number }
+      - {
+          name: related_posts,
+          label: Related Posts,
+          widget: relation,
+          collection: blog,
+          search_fields: [title],
+          value_field: slug,
+        }

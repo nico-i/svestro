@@ -1,0 +1,5 @@
+invalid: yaml: content:
+  - missing proper structure
+    - incomplete fields
+  invalid indentation
+    no collections defined

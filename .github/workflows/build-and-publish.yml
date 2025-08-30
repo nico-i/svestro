@@ -1,0 +1,37 @@
+name: Node.js Package
+
+on:
+  release:
+    types: [created]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  HUSKY: 0
+
+jobs:
+  test-build-publish:
+    name: Test, Build, and Publish Node.js Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+      - name: Install dependencies (Cache hit will skip actual installation)
+        run: |
+          bun install --frozen-lockfile
+      - name: Lint code
+        run: |
+          bun run lint
+      - name: Run tests
+        run: |
+          bun test
+      - name: Build package
+        run: |
+          bun run build
+      - name: Publish package
+        # only run this step if it's a release or a manual trigger
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        run: |
+          bun publish --access public
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
