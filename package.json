@@ -1,7 +1,6 @@
 {
   "name": "svestro",
   "description": "CLI tool to generate an Astro content configuration file from a Sveltia configuration file.",
-  "private": true,
   "main": "out/index.js",
   "bin": {
     "svestro": "./out/index.js"
