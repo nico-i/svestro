@@ -37,7 +37,7 @@
     "@types/inquirer": "9.0.9",
     "@types/node": "22.19.0",
     "commitlint-plugin-spend": "1.3.0",
-    "eslint": "9.39.0",
+    "eslint": "9.39.1",
     "husky": "9.1.7",
     "prettier": "3.6.2"
   },
