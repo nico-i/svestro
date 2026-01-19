@@ -35,7 +35,7 @@
     "@nico-i/prettier-config": "1.0.2",
     "@types/bun": "1.3.6",
     "@types/inquirer": "9.0.9",
-    "@types/node": "22.19.6",
+    "@types/node": "22.19.7",
     "commitlint-plugin-spend": "1.3.0",
     "eslint": "9.39.2",
     "husky": "9.1.7",
